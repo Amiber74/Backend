@@ -1,0 +1,41 @@
+
+<div>
+    <hr>
+    <h3>AGREGAR</h3>
+    <label for="name">Nombre: </label>
+    <input type="text" name="name" id="name">
+    
+    <label for="code">Codigo: </label>
+    <input type="number" name="code" id="code">
+
+    <label for="price">Precio: </label>
+    <input type="number" name="price" id="price">
+
+    <label for="stock">Stock: </label>
+    <input type="number" name="stock" id="stock">
+
+    <button type="submit" id="submit">Enviar</button>
+    
+    <hr>
+
+    <h3>ELIMINAR</h3>
+    <label for="codeRem"> Codigo: </label>
+    <input type="number" name="codeRem" id="codeRem">
+
+    <button type="submitRem" id="submitRem">Enviar</button>
+    <hr>
+
+    <h2>Lista de productos: </h2>
+    <div id="Products">
+
+    </div>
+
+</div>
+
+
+
+
+
+
+<script src="/socket.io/socket.io.js"></script>
+<script src="/js/realTime.js"></script>

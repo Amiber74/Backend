@@ -1,0 +1,47 @@
+<form action="http://localhost:8080/home" method="post">
+    
+    <h3>AGREGAR</h3>
+    <label for="name">Nombre: </label>
+    <input type="text" name="name" id="name">
+    
+    <label for="code">Codigo: </label>
+    <input type="number" name="code" id="code">
+
+    <label for="price">Precio: </label>
+    <input type="number" name="price" id="price">
+
+    <label for="stock">Stock: </label>
+    <input type="number" name="stock" id="stock">
+
+    <button type="submit" id="submit">Enviar</button>
+    <hr>
+</form>
+
+<form action="http://localhost:8080/home" method="post">
+    
+    <h3>ELIMINAR</h3>
+    <label for="code">Codigo: </label>
+    <input type="number" name="code" id="code">
+
+    <button type="submit" id="submit">Enviar</button>
+    
+</form>
+
+
+    <h2>Productos: </h2>
+    {{#each Products}}
+        <div>
+            <p>Nombre: {{this.name}} </p>
+            <p>Codigo: {{this.code}} </p>
+            <p>Precio: {{this.price}} </p>
+            <p>Stock: {{this.stock}} </p>
+            <hr>
+        </div>
+    {{/each}}
+
+
+
+
+
+
+<script src="/js/index.js"></script>
