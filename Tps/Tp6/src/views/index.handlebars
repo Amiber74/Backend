@@ -1,0 +1,13 @@
+<h1>Nombre de tienda</h1>
+
+    <div class="Products">
+        {{#each Product}}
+            <div class="Prod">
+                <h4>{{this.title}}</h4>
+                <div class="img"></div>
+                <p>{{this.description}}</p>
+                <p>{{this.price}}</p>
+            </div>
+        {{/each}}
+
+    </div>
