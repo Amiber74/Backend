@@ -1,0 +1,28 @@
+
+<h1>CHAT</h1>
+
+
+<form action="http://localhost:8080/api/chat" class="formulario"  method="post">
+    
+    <label for="user">user: </label>
+    <input type="text" name="user" id="user" placeholder="user...">
+    <label for="msg">Mensaje: </label>
+    <input type="text" name="msg" id="msg" placeholder="mensaje...">
+    <button type="submit" id="submit">Enviar</button>
+
+    
+</form>
+
+
+<div class="chat">
+    
+    <div class="message">
+        {{#each result}}
+
+            <p>{{this.user}}: {{this.msg}} </p>
+            <hr>
+            
+        {{/each}}
+    </div>
+
+</div>

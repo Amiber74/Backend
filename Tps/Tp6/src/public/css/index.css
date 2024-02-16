@@ -3,6 +3,10 @@ body{
     background-color: rgba(128, 128, 128, 0.473);
 }
 
+h1{
+    text-align: center;
+}
+
 .Products{
     display: grid;
     grid-template-columns: repeat(4, 1fr);
@@ -24,4 +28,8 @@ body{
     height: 140px;
     background-color: gray;
     color: white;
+}
+
+.Products .Prod p {
+    padding-inline: 5px;
 }
