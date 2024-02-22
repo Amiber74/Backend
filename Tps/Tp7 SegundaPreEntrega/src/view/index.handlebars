@@ -1,0 +1,32 @@
+<h1>Productos:</h1>
+{{#if isValid}}
+    <div>
+        {{#each result}}
+            <div class="Prod">
+                <p>Nombre: {{this.title}} &nbsp;</p>
+                <p>Precio: {{this.price}}&nbsp;</p>
+                <p>Descripcion: {{this.description}}&nbsp;</p>
+                <form action="http://localhost:8080/api/carts/product/1/{{this.code}}" method="post">
+                    <input type="submit" value="Agregar carrito">
+                </form>
+            </div>
+            <br/>
+        {{/each}}
+    </div>
+    <br/>
+    <div>
+        {{#if hasPrevPage}}
+            <a href={{prevLink}}> << Anterior </a>
+        {{/if}}
+            &nbsp;
+            {{this.page}}
+            &nbsp;
+        {{#if hasNextPage}}
+            <a href={{nextLink}}> Siguiente >></a>
+        {{/if}} 
+    </div>
+    
+{{else}}
+    
+    <h1>No hay Productos para mostrar</h1>
+{{/if}}
