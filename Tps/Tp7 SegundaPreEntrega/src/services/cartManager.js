@@ -3,7 +3,7 @@ import productManager from "./productsManager.js";
 
 const PM = new productManager()
 
-class CartModel {
+class CartManager {
     async NewId (){
         
         let result = Math.floor(Math.random() * 1000)
@@ -179,4 +179,4 @@ class CartModel {
     }
 }
 
-export default CartModel
+export default CartManager
