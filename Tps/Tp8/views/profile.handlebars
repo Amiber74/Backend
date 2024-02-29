@@ -1,0 +1,20 @@
+<h1>Bienvenido {{user.firstName}} {{user.lastName}}</h1>
+
+<p>edad: {{user.age}} </p>
+<p> email:{{user.email}} </p>
+<p> {{error.status}} </p>
+
+{{#if user.isAdmin}}
+
+    <form action="/" method="post">
+        <input type="text" name="title" placeholder="title">
+        <input type="text" name="description" placeholder="description"> 
+        <input type="number" name="price" placeholder="price">
+        <input type="text" name="code" placeholder="code"> 
+        <input type="submit" value="Crear Producto">
+    </form>
+
+{{/if}}
+
+<a href="/api/sessions/logout"> Logout</a>
+

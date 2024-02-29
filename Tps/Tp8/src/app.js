@@ -1,8 +1,13 @@
-import express from 'express'
-import handlebars from 'express-handlebars'
-import cookieParser from 'cookie-parser'
-import __dirname from './util.js'
+import express from "express"
+import handlebars from 'express-handlebars';
+import session from "express-session";
+import cookieParser from "cookie-parser";
+import MongoStore from "connect-mongo";
+import mongoose from "mongoose";
+import __dirname from './utils.js'
 
+import sessionsRouter from "./routes/sessionsRouter.js";
+import viewsRouter from "./routes/viewsRouter.js";
 
 const app = express()
 
@@ -10,43 +15,27 @@ app.use(express.json())
 app.use(express.urlencoded({extended:true}))
 
 app.engine('handlebars', handlebars.engine())
-app.set('views', __dirname + '/views')
+app.set('views', __dirname + './../views')
 app.set( 'view engine', 'handlebars')
 app.use( express.static(__dirname + '/public'))
 
+app.use(cookieParser());
+app.use(session({
+    store:MongoStore.create({
+        mongoUrl:'mongodb://127.0.0.1:27017/tp8',
+        ttl:15,
+    }),
+    secret:"sd654khg1f3",
+    resave:true,
+    saveUninitialized:true
+}))
 
+app.use("/api/sessions", sessionsRouter);
+app.use("/", viewsRouter);
 
-app.use(cookieParser('CoderS3cR3tC0d3 '))
+mongoose.connect('mongodb://127.0.0.1:27017/tp8');
 
-app.use('/setCookie', (req, res) => {
-    res.cookie('CoderCookie', 'informacion de la cookie', {maxAge:5000,signed:true}).send('Cookie')
-
+app.listen(8080, () => {
+    console.log("servidor levantado en el puerto 8080");
 })
 
-app.use('/getCookie', (req, res) => {
-
-    res.send(req.cookies)
-
-})
-
-app.use('/deleteCookie', (req, res) => {
-
-    res.clearCookie('CoderCookie').send('Cookie Removed')
-
-})
-
-
-
-
-
-
-
-
-
-
-
-
-
-app.listen(8080, ()=>{
-    console.log('Servidor levantado en el puerto 8080')
-})

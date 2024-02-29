@@ -1,0 +1,17 @@
+<h1>Bienvenido</h1>
+
+<p><a href="/login"> Iniciar sesion</a></p>
+<p><a href="/register">Registrarse</a></p>
+
+<br>
+
+<div class="Products">
+    {{#each prods}}
+        <div class="Prod">
+            <h4>{{this.title}}</h4>
+            <div class="img"></div>
+            <p>{{this.description}}</p>
+            <p>{{this.price}}</p>
+        </div>
+    {{/each}}
+</div>
