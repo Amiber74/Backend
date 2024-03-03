@@ -17,6 +17,7 @@ h1{
 .Products .Prod {
     display: grid;
     height: 70vh;
+    width: 100%;
     grid-template-rows: 1fr 150px 1.1fr 1fr;
     place-items: center;
     background-color: rgba(255, 255, 255, 0.418);
