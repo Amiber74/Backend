@@ -5,12 +5,14 @@ import cookieParser from 'cookie-parser'
 import mongoose from 'mongoose'
 import MongoStore from 'connect-mongo'
 import initializePassport from './config/passportConfig.js'
+import passport from 'passport'
 import __dirname from './utils/dirname.js'
 
 
 import viewRouter from './routes/viewsRouter.js'
 import sessionRouter from './routes/sessionsRouter.js'
-import passport from 'passport'
+import passportRouter from './routes/passportRouter.js'
+
 
 const app = express()
 
@@ -34,10 +36,11 @@ app.use(session({
     saveUninitialized:true
 }))
 app.use(passport.initialize())
-
+app.use(passport.session())
 
 app.use('/', viewRouter)
 app.use('/api/session', sessionRouter)
+app.use('/api/passport', passportRouter)
 
 
 mongoose.connect('mongodb://127.0.0.1:27017/Tp9')

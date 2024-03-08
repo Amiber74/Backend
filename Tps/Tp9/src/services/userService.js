@@ -1,11 +1,12 @@
 import usersModel from "../models/usersModel.js";
-import crypt from 'crypto'
+import { creatHash, isValidPassword } from "../utils/bcrypt.js";
+// import crypt from 'crypto'
 
 class userService {
 
     async UserByEmail(email){
         try {
-            const result = await usersModel.findOne({email})
+            const result = await usersModel.findOne({email:email})
             return result
             
         } catch(e) {
@@ -34,13 +35,10 @@ class userService {
             return 'Campos incompletos'
         }
 
-        const password = await this.getHash(pass)
-        console.log(password);
         try {
-            const newUser = {firstName, lastName, role, age, email, password}
+            const newUser = {firstName, lastName, age, email, password: creatHash(pass)}
             
             const result = await usersModel.create(newUser)
-            console.log(result);
 
             return result
         } catch(e) {
@@ -59,9 +57,21 @@ class userService {
         }
     }
 
-    async getHash ( password){
-        return crypt.createHash('sha256').update(password).digest('hex')
+    ValidPass ( user, passsword){
+        try {
+            const result = isValidPassword(user, passsword)
+            
+            return result
+        } catch(e) {
+        
+            console.error(e.message)
+        }
+
     }
+
+    // async getHash ( password){
+    //     return crypt.createHash('sha256').update(password).digest('hex')
+    // }
 
 }
 

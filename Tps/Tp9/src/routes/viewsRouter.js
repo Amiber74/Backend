@@ -21,11 +21,10 @@ route.get('/home', (req, res) => {
 })
 
 route.get("/profile", async (req, res) => {
-
+    // console.log(req.session.user);
     if(req.session.user){
 
-        let user = await US.userByID(req.session.user);
-        res.render("profile", {user});
+        res.render("profile", req.session.user);
 
     } else {
         res.redirect("/home");
