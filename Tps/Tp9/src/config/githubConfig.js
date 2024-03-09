@@ -13,7 +13,13 @@ const initializeGithub = () => {
     },
     async (accessToken, refreshToken, profile, done) => {
         console.log(profile)
-    
+        const {firstName, lastName='',email, age=0, password='' } = profile._json
+        const user = US.UserByEmail(email)
+        if(user){
+            return done(null, false)
+        }
+        const result = await US.newUser(firstName, lastName, age, email, password)
+        return done(null, result)
     }
 
     ))
