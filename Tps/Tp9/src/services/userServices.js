@@ -1,6 +1,5 @@
-import usersModel from "../models/usersModel.js";
+import usersModel from "../models/userModel.js";
 import { creatHash, isValidPassword } from "../utils/bcrypt.js";
-// import crypt from 'crypto'
 
 class userService {
 
@@ -68,10 +67,6 @@ class userService {
         }
 
     }
-
-    // async getHash ( password){
-    //     return crypt.createHash('sha256').update(password).digest('hex')
-    // }
 
 }
 

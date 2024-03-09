@@ -1,6 +1,6 @@
-import { Router } from "express";
-import userService from '../services/userService.js'
-import { isValidPassword } from "../utils/bcrypt.js";
+import { Router } from "express"
+import userService from '../services/userServices.js'
+import { isValidPassword } from "../utils/bcrypt.js"
 
 const route = Router()
 const US = new userService()
