@@ -1,5 +1,8 @@
-<h1>Informacion de Usuario</h1>
+<h1>Bienvenido {{user.firstName}} {{user.lastName}}</h1>
 
+<p>edad: {{user.age}} </p>
+<p> email:{{user.email}} </p>
+<p> {{error.status}} </p>
 
 <form action="http://localhost:8080/api/session/logout" method="get">
     <input type="submit" value="Deslogearse">

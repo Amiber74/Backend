@@ -7,8 +7,8 @@ const US = new userService()
 const initializeGithub = () => {
     
     passport.use('github', new githubStrategy({
-        clientID: 'Iv1.e04ce5fa66d1a6b5',
-        clienteSecret: '54d7e742f87b21ba14894c188ec04705212d5162',
+        clientID: '',
+        clienteSecret: '',
         calbackURL: 'http://localhost:8080/api/github/githubCallback'
     },
     async (accessToken, refreshToken, profile, done) => {
