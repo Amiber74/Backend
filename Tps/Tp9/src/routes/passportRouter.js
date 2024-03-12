@@ -15,14 +15,14 @@ route.get('/failRegister', async (req, res) => {
 
 })
 
-route.post('/login', passport.authenticate('login', {failureRedirect:'/api/passport/failLogin'}), async (req, res) => {
+route.post('/login', passport.authenticate('register', {failureRedirect:'/api/passport/failLogin'}), async (req, res) => {
     
     res.send('Logeo existoso')
 
 })
 
 route.get('/failLogin', async (req, res) => {
-
+    
     res.send ( 'logeo Fallido')
 
 })

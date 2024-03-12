@@ -48,7 +48,7 @@ class userService {
 
     async userByID(id) {
         try {
-            const result = await usersModel.findOne({_id:id},{firstName:1, lastName:1, age:1, email:1}).lean();
+            const result = await usersModel.findOne({_id:id}).lean();
             return result
         } catch(e) {
         
