@@ -28,26 +28,24 @@ const initializePassport = () =>{
         }
     ))
 
-    passport.use('login', new localStrategy(
-        {usernameField:'email', passReqToCallback:true},async (req, username, password, done) => {
-            
-            console.log(username)
-            console.log(password)
-            const user = await US.UserByEmail(username)
-
-            if(!user){ 
-                console.log('Usuario inexistente') 
-                return done(null, false)
+    passport.use('login', new localStrategy({
+        passReqToCallback:true, 
+        usernameField:'email',
+        passwordField:'password'
+    },  async (req, email, password, done) => {
+            console.log(req.body)
+            const user = await US.UserByEmail(email)
+            if(!user){
+                console.log('usuario no registrado')
+                return done(null, false, {message:'not user found'})
+            } else {
+                const Valid = await US.ValidPass(user, password)
+                if(Valid){
+                    return done(null, user)
+                } else {
+                    return done(null, false, {message:'Contraseña incorrecta'})
+                }
             }
-
-            if(!US.ValidPass(user, password)){
-                console.log('contraseña incorrecta')
-                return done(null, false)
-            }
-
-            return done(null, user)
-
-
         }
     ))
 

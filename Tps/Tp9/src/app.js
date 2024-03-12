@@ -26,8 +26,6 @@ app.set('view engine', 'handlebars')
 app.use(express.static(__dirname + './../public'))
 
 app.use(cookieParser())
-initializePassport()
-initializeGithub()
 
 app.use(session({
     store:MongoStore.create({
@@ -41,6 +39,8 @@ app.use(session({
 
 app.use(passport.initialize())
 app.use(passport.session())
+initializePassport()
+initializeGithub()
 
 app.use('/', viewRouter)
 app.use('/api/session', sessionRouter)
