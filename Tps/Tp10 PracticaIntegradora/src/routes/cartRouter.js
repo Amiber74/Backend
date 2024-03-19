@@ -7,8 +7,8 @@ const route = Router()
 route.get('/', async (req, res) => {
 
     const result = await CS.getCarts()
-    console.log(result)
-    res.send({payload:result})
+    console.log(JSON.stringify(result,null,'\t'))
+    res.send(result)
 })
 
 route.post('/addproduct/:cid/:pid', async (req, res) => {

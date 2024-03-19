@@ -20,7 +20,7 @@ class cartServices{
 
     async getProductsCart (idCart){
         try {
-            const res = await cartModel.find({_id:idCart})
+            const res = await cartModel.findById(idCart)
             
             return res.products
 
@@ -36,7 +36,8 @@ class cartServices{
     async getCarts(){
 
         try {
-            const result = await cartModel.find().lean()
+            const result = await cartModel.find().populate('products').lean()
+            
             return result
             
         } catch(e) {
@@ -47,9 +48,8 @@ class cartServices{
     }
 
     async getCartById(idCart){
-        
         try {
-            const res = await cartModel.findOne({_id:idCart}).populate('products')
+            const res = await cartModel.findById(idCart).populate('products')
             
             return res
 
@@ -61,20 +61,17 @@ class cartServices{
 
     }
 
-    async AddProduct(Cid, Pid, Quantity) {
-        const cid = Number(Cid)
-        const pid = Number(Pid)
+    async AddProduct(cid, Pid, Quantity) {
         
         try {
             const cart = await this.getCartById(cid)
-
+            
             if (!cart.products) {
                 cart.products = [];
             } 
 
-            cart.products.push(pid)
-
-            
+            cart.products.push(Pid)
+            console.log(cart)
             const result = await cartModel.updateOne({_id:cid}, cart)
             
             return result
