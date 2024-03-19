@@ -1,26 +1,22 @@
-import productModel from "../models/productsModel.js";
+import productModel from "../models/productsModel.js"
 
-class ProductDao{
+class productServices {
 
-    async getAllProducts() {
-
+    async getAllProducts (){
         try {
-            const Result = await productModel.find()
-            return Result
+            const result = await productModel.find().lean()
+            return result
             
         } catch(e) {
-
+        
             console.error(e.message)
-            return []
         }
     }
 
     async getOneProduct (Pid){
-
-        const Id = String(Pid)
-
+        const code =Number(Pid)
         try{    
-            const result = await productModel.find({_id:Id})
+            const result = await productModel.findOne({code:code}).lean()
             return result
         }catch(e){
             console.error(e.message)
@@ -33,6 +29,12 @@ class ProductDao{
 
         if(!tittle|| !description|| !code|| !price){    
             return 'ERROR: Campos incompletos'
+        }
+
+        const prod = await this.getOneProduct(code)
+
+        if(prod){
+            return 'ERROR: codigo ya existente'
         }
 
         const newProduct ={ 
@@ -50,16 +52,24 @@ class ProductDao{
             return 'Error al crear producto'
         }
     }
-    
-    async UpdateProduct (uid, product){
+
+    async UpdateProduct (Pid, product){
+        const pid = Number(Pid)
+
         const {tittle,description,code,price} = product
 
         if(!tittle || !description || !code || !price){
             return 'ERROR: Campos incompletos'
         }
 
+        const prod = await this.getOneProduct(code)
+
+        if(!prod){
+            return 'ERROR: codigo inexistente'
+        }
+
         try{
-            const result = await productModel.updateOne({_id:uid},product)
+            const result = await productModel.updateOne({code:pid},product)
             return result
     
         }catch(e){
@@ -68,23 +78,19 @@ class ProductDao{
         }
     }
 
-    async DeleteProduct (uid){
+    async DeleteProduct (Pid){
+        const code =Number(Pid)
 
         try{
-            const result = await productModel.deleteOne({_id:uid})
+            const result = await productModel.deleteOne({code:code})
             
-            return {
-                status: 200,
-                message:result
-            }
+            return result
         }catch(e){
-            res.render({
-                message:e.message
-            })
+            console.log(e.message)
+            return 'error al eliminar producto'
         }
 
     }
-
 }
 
-export default ProductDao
+export default productServices

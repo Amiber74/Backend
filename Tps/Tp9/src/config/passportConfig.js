@@ -39,8 +39,7 @@ const initializePassport = () =>{
                 console.log('usuario no registrado')
                 return done(null, false, {message:'not user found'})
             } else {
-                const Valid = await US.ValidPass(user, password)
-                if(Valid){
+                if(US.ValidPass(user, password)){
                     return done(null, user)
                 } else {
                     return done(null, false, {message:'Contraseña incorrecta'})
