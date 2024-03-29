@@ -1,7 +1,4 @@
 import cartModel from '../models/cartModel.js'
-import productServices from './productServices.js'
-
-const PM = new productServices()
 
 class cartServices{
 

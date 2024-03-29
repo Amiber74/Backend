@@ -6,6 +6,7 @@ import mongoose from 'mongoose'
 import MongoStore from 'connect-mongo'
 import passport from 'passport'
 import flash from 'connect-flash'
+import config from './config/config.js'
 
 import __dirname from './utils/dirname.js'
 import initializePassport from './config/passportConfig.js'
@@ -24,14 +25,14 @@ app.set('views', __dirname + './../views')
 app.set('view engine', 'handlebars')
 app.use(express.static(__dirname + './../public'))
 
-app.use(cookieParser())
+app.use(cookieParser(config.cookieSecret))
 
 app.use(session({
     store: MongoStore.create({
-        mongoUrl:'mongodb://127.0.0.1:27017/Tp10',
+        mongoUrl: config.mongoUrl,
         ttl:15
     }),
-    secret:'FraseSecreta',
+    secret: config.mongoSecret,
     resave:true,
     saveUninitialized:true
 }))
@@ -46,8 +47,7 @@ app.use('/', viewRouter)
 app.use('/api/user', userRouter)
 app.use('/api/cart', cartRouter)
 
-mongoose.connect('mongodb://127.0.0.1:27017/Tp10')
+mongoose.connect(config.mongoUrl)
 
 
-
-app.listen(8080, ()=> {console.log('Servidor levantado en el puerto 8080')})
+app.listen(config.port, ()=> {console.log(`Servidor levantado en el puerto ${config.port}`)})

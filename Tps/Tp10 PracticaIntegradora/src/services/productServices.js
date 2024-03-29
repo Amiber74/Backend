@@ -14,7 +14,7 @@ class productServices {
     }
 
     async getOneProduct (Pid){
-        const code =Number(Pid)
+        const code = Number(Pid)
         try{    
             const result = await productModel.findOne({code:code}).lean()
             return result
