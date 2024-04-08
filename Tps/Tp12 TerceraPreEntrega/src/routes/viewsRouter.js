@@ -26,6 +26,4 @@ route.get('/profile', async (req, res) => {
     res.render('profile', {Products:result, Cid: idCart, role})
 })
 
-
-
 export default route

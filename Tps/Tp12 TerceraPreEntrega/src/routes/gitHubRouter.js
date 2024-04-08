@@ -2,16 +2,16 @@ import { Router } from "express";
 import passport from "passport";
 const route = Router()
 
-route.get('/register', passport.authenticate('github', {}),
+route.get('/register', passport.authenticate('github', {successRedirect: '/profile'}),
 async (req, res) => {
-
-    console.log(req.body)
-    res.send('Todo salio bien :D')
-
 })
 
-route.get('/githubCallback', (req, res) => {
-    res.send('calback de github')
+route.get('/githubcallback',passport.authenticate('github',{failureRedirect:'/login'}),
+(res, req)=> {
+    const {__dirname, username, name} = req.user
+    req.session.user ={__dirname, username, name} 
+    res.redirect('/')
+}
+)
 
-})
 export default route

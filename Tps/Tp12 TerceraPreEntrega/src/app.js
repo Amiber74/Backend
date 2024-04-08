@@ -41,16 +41,16 @@ app.use(session({
 }))
 app.use(flash())
 
+initializeGithub()
 app.use(passport.initialize())
 app.use(passport.session())
-// initializeGithub()
 
 app.use('/', viewsRouter)
 app.use('/api/product', productRouter)
 app.use('/api/cart', cartRouter)
 app.use('/api/user', userRouter)
 app.use('/api/ticket', ticketRouter)
-// app.use('/api/github', githubRouter)
+app.use('/api/github', githubRouter)
 
 mongoose.connect(config.mongoUrl)
 

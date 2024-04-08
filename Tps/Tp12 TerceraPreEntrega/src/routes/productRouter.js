@@ -25,8 +25,4 @@ route.get('*', (req, res) => {
     res.redirect('/home')
 })
 
-
-
-
-
 export default route
