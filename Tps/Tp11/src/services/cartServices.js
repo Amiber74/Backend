@@ -1,7 +1,4 @@
 import cartModel from '../models/cartModel.js'
-import productServices from './productServices.js'
-
-const PM = new productServices()
 
 class cartServices{
 
@@ -71,7 +68,7 @@ class cartServices{
             } 
 
             cart.products.push(Pid)
-            console.log(cart)
+            
             const result = await cartModel.updateOne({_id:cid}, cart)
             
             return result
