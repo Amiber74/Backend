@@ -1,0 +1,11 @@
+config: 
+  target: 'http://localhost:8080'
+  phases: 
+    - duration: 10
+      arrivalRate: 10
+scenarios:
+  - name: "Test de Usuario"
+    flow: 
+      - log: "Obteniendo usuarios"
+      - get: 
+        - url: "/api/test/user"

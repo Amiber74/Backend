@@ -1,6 +1,6 @@
 import { faker } from '@faker-js/faker'
 
-// faker.locale = 'es' // Locale en español
+// faker.locale = 'es'
 
 const generateProduct = () => {
     return {
