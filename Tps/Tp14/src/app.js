@@ -7,7 +7,7 @@ import loggerRoute from './routes/loggerRouter.js'
 
 import config  from './config/config.js'
 import __dirname from './utils/dirname.js'
-import {logger, addLogger} from './utils/logger_produccion.js'
+import {logger, addLogger} from './utils/logger.js'
 
 const app = express()
 

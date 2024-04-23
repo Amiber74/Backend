@@ -1,6 +1,6 @@
 import userModel from '../models/userModels.js'
 import {createHash, isValidPassword} from '../utils/bcrypt.js'
-import { logger } from '../utils/logger_produccion.js'
+import { logger } from '../utils/logger.js'
 
 export class userServices {
 
