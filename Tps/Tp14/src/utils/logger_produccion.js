@@ -1,20 +1,31 @@
 import winston from 'winston'
 import moment from 'moment'
 
-const winstonColors ={
-    fatal: 'red',
-    error: 'orange', 
-    warn: 'yellow',
-    info: 'gray',
-    debug: 'white'
+const CustomLogger ={
+    levels:{
+        fatal:0,
+        error:1,
+        warn:2,
+        info:3,
+        http:4,
+        debug:5
+    },
+    colors: {
+        fatal: 'red',
+        error: 'black', 
+        warn: 'yellow',
+        info: 'blue',
+        debug: 'green'
+    }
 }
 
 export const logger  = winston.createLogger({
+    levels: CustomLogger.levels,
     transports: [
         new winston.transports.Console({
-            level: "http",
+            level: "info",
             format: winston.format.combine(
-                winston.format.colorize({colors:winstonColors}),
+                winston.format.colorize({colors:CustomLogger.colors}),
                 winston.format.simple()
             )
         }),
@@ -25,9 +36,8 @@ export const logger  = winston.createLogger({
         })
     ]
 })
-//let acum = 0
+
 export const addLogger = (req, res, next) => {
-    //acum = acum + 1
     req.logger = logger
     req.logger.http(` Peticion tipo '${req.method}' en '${req.url}' fecha: ${moment().format('DD-MM-YYYY HH:mm:ss')} `)
     next()

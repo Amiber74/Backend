@@ -8,4 +8,28 @@ scenarios:
     flow: 
       - log: "Obteniendo usuarios"
       - get: 
-        - url: "/api/test/user"
+        - url: "/api/test/userFake"
+        capture: 
+          - json: "$.firstName"
+            as: "firstName"
+          - json: "$.lastName"
+            as: "lastName"
+          - json: "$.email"
+            as: "email"
+          - json: "$.password"
+            as: "password"
+      - log: "Registro de usuario"
+      - post: 
+        url: '/api/test/register'
+        json:
+          firstName: "{{ firstname}}"
+          lastName: "{{lastname}}"
+          email: "{{email}}"
+          password: "{{password}}"
+      - think: 2
+      - log: 'Logueo de usuario'
+      - post: 
+        url: "/api/test/login"
+        json:
+          email: "{{email}}"
+          password: "{{password}}"

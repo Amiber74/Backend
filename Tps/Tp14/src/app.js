@@ -2,9 +2,12 @@ import express from 'express'
 import handlebars from 'express-handlebars'
 import mongoose from 'mongoose'
 
+import UserRoute from './routes/userRouter.js'
+import loggerRoute from './routes/loggerRouter.js'
+
 import config  from './config/config.js'
 import __dirname from './utils/dirname.js'
-import {logger, addLogger} from './utils/looger.js'
+import {logger, addLogger} from './utils/logger_produccion.js'
 
 const app = express()
 
@@ -20,14 +23,10 @@ mongoose.connect(config.mongoUrl)
 
 app.use(addLogger)
 
-app.get('/operacion', (req, res) => {
-    let acum = 0
-    for (let i= 0; i<10000; i++){
-        acum +=i*5
-    }
-    res.send({acum})
-})
+app.use('/api/test', UserRoute)
+app.use('/', loggerRoute)
 
-app.listen(config.port, ()=>{
-    logger.info((`Servidor levantado en el puerto ${config.port}`))
+const PORT = config.port || 8080
+app.listen(PORT, ()=>{
+    logger.info((`Servidor levantado en el puerto ${PORT}`))
 })
