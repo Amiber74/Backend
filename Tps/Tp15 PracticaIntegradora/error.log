@@ -1,0 +1,57 @@
+error: Error inesperado: users validation failed: cart: Cast to ObjectId failed for value "[]" (type Array) at path "cart" because of "BSONError", password: Path `password` is required.
+error: Error inesperado: users validation failed: password: Path `password` is required.
+error: Error inesperado: users validation failed: password: Path `password` is required.
+error: Error inesperado: Contraseña incorrecta
+error: Error: Campos incompletos
+error: Error: Campos incompletos
+error: Error inesperado: Contraseña incorrecta
+error: Error inesperado: Contraseña incorrecta
+error: Error inesperado: Contraseña incorrecta
+error: Error inesperado: Contraseña incorrecta
+error: Error inesperado: Contraseña incorrecta
+error: Error inesperado: Contraseña incorrecta
+error: Error: Usuario no encontrado
+error: Error inesperado: Contraseña incorrecta
+error: Error: Contraseña Incorrecta
+error: Error: El email rojas.facundo2002@gmail.com ya existe
+error: Error: Contraseña incorrecta
+error: Error: Contraseña Incorrecta
+error: Error: Contraseña incorrecta
+error: Error: Contraseña Incorrecta
+error: Error: El email rojas.facundo2002@gmail.com ya existe
+error: Error: Contraseña incorrecta
+error: Error: Contraseña Incorrecta
+error: Error: El email rojas.facundo2002@gmail.com ya existe
+error: Error: Contraseña incorrecta
+error: Error: Contraseña incorrecta
+error: Error: Contraseña Incorrecta
+error: Error: Contraseña incorrecta
+error: Error: Contraseña Incorrecta
+error: Error: Contraseña incorrecta
+error: Error: Contraseña Incorrecta
+error: Error: Contraseña incorrecta
+error: Error: Contraseña Incorrecta
+error: Error: Contraseña incorrecta
+error: Error: Contraseña Incorrecta
+error: Error: Contraseña incorrecta
+error: Error: Contraseña Incorrecta
+error: Error: Contraseña incorrecta
+error: Error: Contraseña Incorrecta
+error: Error: Contraseña incorrecta
+error: Error: Contraseña Incorrecta
+error: Error: Contraseña incorrecta
+error: Error: Contraseña Incorrecta
+error: Error: Contraseña incorrecta
+error: Error: Contraseña Incorrecta
+error: Error: Contraseña incorrecta
+error: Error: Contraseña Incorrecta
+error: Error: Contraseña incorrecta
+error: Error: Contraseña Incorrecta
+error: Error: Contraseña incorrecta
+error: Error: Contraseña Incorrecta
+error: Error: Contraseña incorrecta
+error: Error: Contraseña Incorrecta
+error: Error: Contraseña incorrecta
+error: Error: Contraseña Incorrecta
+error: Error: Contraseña incorrecta
+error: Error: Contraseña Incorrecta
