@@ -11,8 +11,10 @@ import flash from 'connect-flash'
 import __dirname from './utils/dirname.js'
 import { logger, addLogger } from './utils/loggers.js'
     //Rutas
-import viewRouter from './routes/viewRouter.js'
-import userRouter from './routes/userRouter.js'
+import viewRoute from './routes/viewRouter.js'
+import userRoute from './routes/userRouter.js'
+import productRoute from './routes/productRouter.js'
+import cartRoute from './routes/cartRouter.js'
 
 const app = express()
 
@@ -43,8 +45,10 @@ app.use(flash())
 app.use(addLogger)
 
 //Rutas
-app.use('/', viewRouter)
-app.use('/api/user', userRouter)
+app.use('/', viewRoute)
+app.use('/api/user', userRoute)
+app.use('/api/product', productRoute)
+app.use('/api/cart', cartRoute)
 
 const PORT = 8080
 app.listen(PORT, () => {

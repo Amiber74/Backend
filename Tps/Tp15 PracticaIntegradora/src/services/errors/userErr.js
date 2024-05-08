@@ -1,4 +1,4 @@
-import { logger } from "../utils/loggers.js"
+import { logger } from "../../utils/loggers.js"
 
 export class DBerror extends Error{
     constructor(message){
@@ -50,31 +50,30 @@ export class userDtoNotFoundError extends Error{
 }
 
 
-export const HandleError = (err) => {
+export const HandleErr = (err) => {
     switch (true){
         case err instanceof DBerror:
-            logger.error(`Error: ${err.message}`)
+            logger.error(`Error en Usuarios: ${err.message}`)
             break
         case err instanceof ValidationError:
-            logger.error(`Error: ${err.message}`)
+            logger.error(`Error en Usuarios: ${err.message}`)
             break
         case err instanceof DuplicateEmailError:
-            logger.error(`Error: ${err.message}`)
+            logger.error(`Error en Usuarios: ${err.message}`)
             break
         case err instanceof UserNotFoundError:
-            logger.error(`Error: ${err.message}`)
+            logger.error(`Error en Usuarios: ${err.message}`)
             break
         case err instanceof InvalidCredentialsError:
-            logger.error(`Error: ${err.message}`)
+            logger.error(`Error en Usuarios: ${err.message}`)
             break
         case err instanceof InvalidPasswordError:
-            logger.error(`Error: ${err.message}`)
+            logger.error(`Error en Usuarios: ${err.message}`)
             break
         case err instanceof userDtoNotFoundError:
-            logger.error(`Error: ${err.message}`)
+            logger.error(`Error en Usuarios: ${err.message}`)
             break
         default:
-            logger.warn(`Error: ${err.message}`)
-            
+            logger.warn(`Error inesperado en Usuarios: ${err.message}`)
     }
 }

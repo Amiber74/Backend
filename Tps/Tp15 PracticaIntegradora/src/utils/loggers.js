@@ -16,7 +16,7 @@ const CustomLogger ={
         error: 'black', 
         warn: 'yellow',
         info: 'blue',
-        debug: 'green',
+        debug: 'white',
     }
 }
 
@@ -25,7 +25,7 @@ export let logger = winston.createLogger({
     levels: CustomLogger.levels,
     transports: [
         new winston.transports.Console({
-            level: "http",
+            level: "debug",
             format: winston.format.combine(
                 winston.format.colorize({colors:CustomLogger.colors}),
                 winston.format.simple()

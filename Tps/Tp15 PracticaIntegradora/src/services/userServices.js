@@ -1,8 +1,12 @@
 import userModel from '../models/userModel.js'
 import userDTO from './DTOs/userDTO.js'
+import { cartServices } from './cartServices.js'
 import {createHash, isValidPassword} from '../utils/bcrypt.js'
 import { logger } from '../utils/loggers.js'
-import {DBerror, ValidationError, DuplicateEmailError, UserNotFoundError, InvalidPasswordError, InvalidCredentialsError, userDtoNotFoundError, HandleError} from './errs.js' 
+import {v4 as uuidv4} from 'uuid'
+import {DBerror, ValidationError, DuplicateEmailError, UserNotFoundError, InvalidPasswordError, InvalidCredentialsError, userDtoNotFoundError, HandleErr} from './errors/userErr.js' 
+
+const CS = new cartServices()
 
 export class userServices{
     async createUser(firstName, lastName, email, pass, phone='', role='user'){
@@ -14,11 +18,13 @@ export class userServices{
             if(users){
                 throw new DuplicateEmailError(`El email ${email} ya existe`)
             }
-            const newUser = {firstName, lastName, fullName:firstName+lastName, email, password:createHash(pass) ,phone, cart:[], role }
-            const result = (await userModel.create(newUser)).save()
+            if(email=='rojas.facundo2002@gmail.com') role='premium'
+
+            const newUser = {firstName, lastName, fullName:firstName+' '+lastName, email, password:createHash(pass) ,phone, cart: await CS.newCart(), role }
+            const result = (await userModel.create(newUser)).save() 
             return result
         } catch(err) {
-            HandleError(err)
+            HandleErr(err)
             // if(err instanceof ValidationError){
             //     logger.error(`Error: ${err.message}`)
             // }else if (err instanceof DuplicateEmailError){
@@ -32,11 +38,11 @@ export class userServices{
     async getUserByEmail(email){
         try {
             if(!email){throw new ValidationError ('Campo incompleto')}
-            const result = await userModel.findOne({email:email}).lean()
-            if(!result){new UserNotFoundError('Email no encontrado')}
+            const result = await userModel.findOne({email}).lean()
+            if(!result){throw new UserNotFoundError('Email no encontrado')}
             return result
         } catch(err) {
-            HandleError(err)
+            HandleErr(err)
             // if(err instanceof ValidationError){
             //     logger.error(`Error: ${err.message}`)
             // } else if (err instanceof UserNotFoundError){
@@ -48,14 +54,15 @@ export class userServices{
 
     }
 
-    async getUserById(Id){
+    async getUserById(id){
         try {
-            if(!Id){throw new ValidationError ('Campo incompleto')}
-            const result = await userModel.findOne({_id:Id}).lean()
-            if(!result){new UserNotFoundError('Id no encontrado')}
+            if(!id){throw new ValidationError ('Campo incompleto')}
+            const result = await userModel.findOne({_id:id}).lean()
+            
+            if(!result){throw new UserNotFoundError('Usuario no encontrado')}
             return result
         } catch(err) {
-            HandleError(err)
+            HandleErr(err)
             // if(err instanceof ValidationError){
             //     logger.error(`Error: ${err.message}`)
             // } else if (err instanceof UserNotFoundError){
@@ -67,27 +74,27 @@ export class userServices{
 
     }
 
-    async getUserDTO(email){
+    async getUserDTO(id){
         try {
-            if(!email){throw new ValidationError ('Campo incompleto')}
-            const user = (await userModel.findOne({email:email}).lean())
-            if(!user){new UserNotFoundError('Email no encontrado')}
-            const result = userDTO(user)
-            if(!result){new userDtoNotFoundError('DTO no creado')}
+            if(!id){throw new ValidationError ('Campo incompleto')}
+            const user = await this.getUserById(id)
+            if(!user){throw new UserNotFoundError('Email no encontrado')}
+            const result = new userDTO(user)
+            if(!result){throw new userDtoNotFoundError('DTO no creado')}
             return result
         } catch(err) {
-            HandleError(err)
+            HandleErr(err)
         }
     }
 
     async getAllUser(){
         try {
-            const result = await userModel.find().lean()
+            const result = await userModel.find({},{password:0}).lean()
             if(result.length===0) {logger.error('No se encontraron usuarios'); return []}
             if(!result) throw new DBerror(`Error en BD: ${result}`)
             return result
         } catch(err) {
-            HandleError(err)
+            HandleErr(err)
             // if(err instanceof DBerror){
             //     logger.error(`Error en BD: ${err.message}`);
             // }else{
@@ -105,7 +112,7 @@ export class userServices{
             if(!pass){throw new InvalidPasswordError('Contraseña Incorrecta')}
             return true
         } catch(err) {
-            HandleError(err)
+            HandleErr(err)
             // if(err instanceof ValidationError){
             //     logger.error(`Error: ${err.message}`)
             // }else if(err instanceof UserNotFoundError){
@@ -126,7 +133,7 @@ export class userServices{
             if(!result){throw new InvalidCredentialsError('No cuenta con los permisos adecuados')}
             return result 
         } catch(err){
-            HandleError(err)
+            HandleErr(err)
             // if(err instanceof InvalidCredentialsError){
             //     logger.error(`Error: ${err.message}`)
             // } else if (err instanceof UserNotFoundError){
@@ -144,7 +151,7 @@ export class userServices{
             if(!result){throw new InvalidPasswordError('Contraseña incorrecta')}
             return result
         } catch(err) {
-            HandleError(err)
+            HandleErr(err)
             
             // if(err instanceof ValidationError){
             //     logger.error(`Error: ${err.message}`)
@@ -159,13 +166,13 @@ export class userServices{
     async updatePassword(email, newPassword){
         try {
             if(!email || !newPassword){throw new ValidationError ('Campos incompletos')}
-            const user = await this.getByEmail(email)
+            const user = await userModel.findById({email})
             if(!user){throw new UserNotFoundError('Usuario no encontrado')}
             user.password = createHash(newPassword)
             const result = await userModel.updateOne({email}, user)
             return result
         } catch(err) {
-            HandleError(err)
+            HandleErr(err)
             // if(err instanceof ValidationError){
             //     logger.error(`Error: ${err.message}`)
             // } else if(err instanceof UserNotFoundError){
@@ -175,6 +182,21 @@ export class userServices{
             // }
         }
     }
-}
 
-export default userServices
+    async updateRole(email){
+        
+        try {
+            if(!email){throw new ValidationError ('Campo "email" incompleto')}
+            const user = await userModel.findOne({email:email})
+            if(!user){throw new UserNotFoundError('Usuario no encontrado')}
+            if(user.role=='premium' || user.role=='user'){
+                user.role=='premium' ? user.role='user' : user.role='premium'
+                const result = await userModel.findOneAndUpdate({email}, {role:user.role})
+                return result
+            }
+            return new InvalidCredentialsError('No cuenta con los permisos adecuados')
+        } catch(err) {
+            HandleErr(err)
+        }
+    }
+}

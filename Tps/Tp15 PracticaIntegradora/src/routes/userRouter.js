@@ -1,5 +1,5 @@
 import { logger } from "../utils/loggers.js";
-import userServices from "../services/userServices.js";
+import {userServices} from "../services/userServices.js";
 import { Router } from "express";
 
 const route = Router()
@@ -27,4 +27,12 @@ route.get('/logout', (req, res) => {
     res.clearCookie('user')
     res.redirect('/home')
 })
+
+route.post('/updateRole', async (req, res) => {
+    const user = await US.getUserDTO(req.cookies['user']) 
+    await US.updateRole(user.email)
+    res.redirect('/profile')
+})
+
+
 export default route

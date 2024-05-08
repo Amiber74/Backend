@@ -1,57 +1,58 @@
-error: Error inesperado: users validation failed: cart: Cast to ObjectId failed for value "[]" (type Array) at path "cart" because of "BSONError", password: Path `password` is required.
-error: Error inesperado: users validation failed: password: Path `password` is required.
-error: Error inesperado: users validation failed: password: Path `password` is required.
-error: Error inesperado: Contraseña incorrecta
-error: Error: Campos incompletos
-error: Error: Campos incompletos
-error: Error inesperado: Contraseña incorrecta
-error: Error inesperado: Contraseña incorrecta
-error: Error inesperado: Contraseña incorrecta
-error: Error inesperado: Contraseña incorrecta
-error: Error inesperado: Contraseña incorrecta
-error: Error inesperado: Contraseña incorrecta
-error: Error: Usuario no encontrado
-error: Error inesperado: Contraseña incorrecta
-error: Error: Contraseña Incorrecta
-error: Error: El email rojas.facundo2002@gmail.com ya existe
-error: Error: Contraseña incorrecta
-error: Error: Contraseña Incorrecta
-error: Error: Contraseña incorrecta
-error: Error: Contraseña Incorrecta
-error: Error: El email rojas.facundo2002@gmail.com ya existe
-error: Error: Contraseña incorrecta
-error: Error: Contraseña Incorrecta
-error: Error: El email rojas.facundo2002@gmail.com ya existe
-error: Error: Contraseña incorrecta
-error: Error: Contraseña incorrecta
-error: Error: Contraseña Incorrecta
-error: Error: Contraseña incorrecta
-error: Error: Contraseña Incorrecta
-error: Error: Contraseña incorrecta
-error: Error: Contraseña Incorrecta
-error: Error: Contraseña incorrecta
-error: Error: Contraseña Incorrecta
-error: Error: Contraseña incorrecta
-error: Error: Contraseña Incorrecta
-error: Error: Contraseña incorrecta
-error: Error: Contraseña Incorrecta
-error: Error: Contraseña incorrecta
-error: Error: Contraseña Incorrecta
-error: Error: Contraseña incorrecta
-error: Error: Contraseña Incorrecta
-error: Error: Contraseña incorrecta
-error: Error: Contraseña Incorrecta
-error: Error: Contraseña incorrecta
-error: Error: Contraseña Incorrecta
-error: Error: Contraseña incorrecta
-error: Error: Contraseña Incorrecta
-error: Error: Contraseña incorrecta
-error: Error: Contraseña Incorrecta
-error: Error: Contraseña incorrecta
-error: Error: Contraseña Incorrecta
-error: Error: Contraseña incorrecta
-error: Error: Contraseña Incorrecta
-error: Error: Contraseña incorrecta
-error: Error: Contraseña Incorrecta
-error: Error: Contraseña incorrecta
-error: Error: Contraseña Incorrecta
+error: Error en Usuarios: Email no encontrado
+error: Error en Usuarios: Campo incompleto
+error: Error en Usuarios: El email rojas.facundo2002@gmail.com ya existe
+error: Error en Usuarios: Campo incompleto
+error: Error en Usuarios: Campo incompleto
+error: Error en Usuarios: El email rojas.facundo2002@gmail.com ya existe
+error: Error en Usuarios: El email rojas.facundo2002@gmail.com ya existe
+error: Error en Usuarios: Email no encontrado
+error: Error en Productos: cantidad de producto 0
+error: Error en Productos: cantidad de producto 0
+error: Error en Productos: error al encontrar producto
+error: Error en Productos: cantidad de producto 0
+error: Error en Productos: error al encontrar producto
+error: Error en Productos: cantidad de producto 0
+error: Error en Productos: cantidad de producto 0
+error: Error en Productos: error al encontrar producto
+error: Error en Productos: error al encontrar producto
+error: Error en Productos: cantidad de producto 0
+error: Error en Productos: error al encontrar producto
+error: Error en Productos: error al encontrar producto
+error: Error en Productos: error al encontrar producto
+error: Error en Productos: error al encontrar producto
+error: Error en Productos: error al encontrar producto
+error: Error en Productos: error al encontrar producto
+error: Error en Productos: cantidad de producto 0
+error: Error en Productos: error al encontrar producto
+error: Error en Productos: cantidad de producto 0
+warn: Error inesperado en Productos: Cast to ObjectId failed for value "{ Cid: '663ab4c6bf1047ee975d7f74' }" (type Object) at path "_id" for model "products"
+error: Error en Productos: error al encontrar producto
+warn: Error inesperado en Productos: Cast to ObjectId failed for value "{ code: '663ab4c6bf1047ee975d7f74' }" (type Object) at path "_id" for model "products"
+error: Error en Productos: error al encontrar producto
+error: Error en Productos: error al encontrar producto
+error: Error en Productos: error al encontrar producto
+error: Error en Productos: error al encontrar producto
+error: Error en Productos: error al no obtener userDto
+error: Error en Productos: error al no obtener userDto
+error: Error en Productos: error al no obtener userDto
+error: Error en Productos: error al no obtener userDto
+warn: Error inesperado en Productos: Uid is not defined
+warn: Error inesperado en Productos: user is not defined
+warn: Error inesperado en Productos: cart.push is not a function
+warn: Error inesperado en Productos: this.getCartByCode(...).lean is not a function
+warn: Error inesperado en Productos: cart.push is not a function
+warn: Error inesperado en Productos: cart.push is not a function
+warn: Error inesperado en Productos: cart.push is not a function
+warn: Error inesperado en Productos: Cast to embedded failed for value "{ product: '5Z73M', quantity: '1' }" (type Object) at path "products" because of "CastError"
+warn: Error inesperado en Productos: Cast to embedded failed for value "{ product: '5Z73M', quantity: 1 }" (type Object) at path "products" because of "CastError"
+warn: Error inesperado en Productos: err is not defined
+warn: Error inesperado en Productos: err is not defined
+warn: Error inesperado en Productos: err is not defined
+error: Error en Productos: error al encontrar producto
+error: Error en Productos: error de permisos premium
+error: Error en Productos: error de permisos premium
+error: Error en Productos: error de permisos premium
+error: Error en Productos: error de permisos premium
+error: Error en Productos: error de permisos premium
+error: Error en Productos: error de permisos premium
+error: Error en Productos: error de permisos premium

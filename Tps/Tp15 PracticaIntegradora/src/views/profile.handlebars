@@ -1,11 +1,14 @@
-
 <h1 style="text-decoration:underline; text-align:center"> Tienda </h1>
 
 <form action="http://localhost:8080/api/user/logout" method="get" style="margin: 10px">
     <input type="submit" value="logout">
 </form>
-<form action="http://localhost:8080/api/cart/{{Cid}}" method="get" style="margin: 10px">
+<form action="http://localhost:8080/api/cart/{{user.email}}" method="get" style="margin: 10px">
     <input type="submit" value="Carrito">
+</form>
+<form action="http://localhost:8080/api/user/updateRole" method="post" style="margin: 10px">
+    <input type="hidden" name="email" id:"email", value={{user.email}}>
+    <input type="submit" value="Cambiar de Rol">
 </form>
 
 {{!-- 
@@ -25,25 +28,29 @@
 
     <hr>
 {{/if}} --}}
-
 {{#if Products}}
     <div class="container" style="display: grid; grid-template-columns:repeat(4,1fr); text-align:center; gap:5px">
-        {{#each Products}}
+        {{#each Products as |product|}}
             <div class="Card" style="border:1px solid black; padding:5px; border-radius: 15px;">
-            <h4> {{this.title}} &nbsp;</h4>
-            <div class="img" style="width: 150px; heigth: 150px; background-color:gray; color: gray">.</div>
-            <p> {{this.description}} </p>
-            <p> $ {{this.price}} &nbsp;</p>
-            <form action="http://localhost:8080/api/cart/addproduct/{{this.Cid}}/{{this._id}}" method="post">
-                <input type="number" name="quantity" id="quantity" min="1" >
-                <input type="submit" value="Agregar carrito">
-            </form>
+                <h4> {{product.title}} &nbsp;</h4>
+                <div class="img" style="width: 150px; heigth: 150px; background-color:gray; color: gray">.</div>
+                <p> {{product.description}} </p>
+                <p> $ {{product.price}} &nbsp;</p>
+                <form action="http://localhost:8080/api/cart/addproduct/{{product.Cid}}/{{product._id}}" method="post">
+                    <input type="hidden" name="email" value="{{product.email}}">
+                    <input type="number" name="quantity" id="quantity" min="0" >
+                    <input type="submit" value="Agregar carrito">
+                </form>
+                <form action="/api/product/delete/{{product.code}}/{{product.email}}" method="post">
+                    <input type="submit" value="Eliminar">
+                </form>
+                {{!-- <a href="/api/product/delete/:{{product.code}}/:{{user.email}}">
+                    <button>Eliminar</button> 
+                </a> --}}
             </div>  
         {{/each}}
     </div>
 
 {{else}}
-
     <h2>Sin productos en el servidor</h2>
-
 {{/if}}
