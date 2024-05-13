@@ -48,10 +48,29 @@ export class userDtoNotFoundError extends Error{
         this.name='userDtoNotFoundError'
     }
 }
+export class PasswordMismatchError extends Error{
+    constructor(message){
+        super(message),
+        this.name='PasswordMismatchError'
+    }
+}
+export class SamePasswordError extends Error{
+    constructor(message){
+        super(message),
+        this.name='SamePasswordError'
+    }
+}
+
 
 
 export const HandleErr = (err) => {
     switch (true){
+        case err instanceof SamePasswordError:
+            logger.error(`Error en Usuarios: ${err.message}`)
+            break
+        case err instanceof PasswordMismatchError:
+            logger.error(`Error en Usuarios: ${err.message}`)
+            break
         case err instanceof DBerror:
             logger.error(`Error en Usuarios: ${err.message}`)
             break

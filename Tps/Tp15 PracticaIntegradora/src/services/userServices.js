@@ -4,7 +4,7 @@ import { cartServices } from './cartServices.js'
 import {createHash, isValidPassword} from '../utils/bcrypt.js'
 import { logger } from '../utils/loggers.js'
 import {v4 as uuidv4} from 'uuid'
-import {DBerror, ValidationError, DuplicateEmailError, UserNotFoundError, InvalidPasswordError, InvalidCredentialsError, userDtoNotFoundError, HandleErr} from './errors/userErr.js' 
+import {DBerror, ValidationError, DuplicateEmailError, UserNotFoundError, InvalidPasswordError, InvalidCredentialsError, userDtoNotFoundError, PasswordMismatchError, SamePasswordError, HandleErr} from './errors/userErr.js' 
 
 const CS = new cartServices()
 
@@ -163,24 +163,19 @@ export class userServices{
         }
     }
 
-    async updatePassword(email, newPassword){
+    async updatePassword(email, newPassword, repeatPassword){
         try {
-            if(!email || !newPassword){throw new ValidationError ('Campos incompletos')}
-            const user = await userModel.findById({email})
-            if(!user){throw new UserNotFoundError('Usuario no encontrado')}
-            user.password = createHash(newPassword)
-            const result = await userModel.updateOne({email}, user)
+            if(!email || !newPassword|| !repeatPassword){throw new ValidationError ('Campos incompletos')}
+            if(!repeatPassword==newPassword){throw new PasswordMismatchError('No coinciden las contraseñas')}
+            const user = await this.getUserByEmail(email)
+            if(!user){throw new UserNotFoundError('Email no encontrado')}
+            if(isValidPassword(user, newPassword)){throw new SamePasswordError('Contraseña igual a la anterior')}
+            const result = await userModel.findOneAndUpdate({email}, {password:createHash(newPassword)})
             return result
         } catch(err) {
             HandleErr(err)
-            // if(err instanceof ValidationError){
-            //     logger.error(`Error: ${err.message}`)
-            // } else if(err instanceof UserNotFoundError){
-            //     logger.error(`Error: ${err.message}`)
-            // }else{
-            //     logger.error(`Error inesperado: ${err.message}`)
-            // }
         }
+
     }
 
     async updateRole(email){
