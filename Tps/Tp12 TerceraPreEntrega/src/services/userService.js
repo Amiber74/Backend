@@ -113,7 +113,7 @@ class userServices {
             const result = await userModel.findOne({_id:id}, {password:0}).lean()
             return result
         } catch(e) {
-            console.error(e.message)
+            logger.error(e.message)
         }
     }
 }

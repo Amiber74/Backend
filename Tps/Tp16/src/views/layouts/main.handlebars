@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/{{style}}">
+    <title>{{title}}</title>
+</head>
+<body>
+    {{#if err}}
+        <div style="display: grid; place-items:center;border: 1px solid rgba(95, 95, 95, 0.555); background-color:rgba(181, 181, 252, 0.5)">
+            <p style="font-size:1rem;">Ocurrio un error, intente de nuevo o mas tarde</p>
+        </div>
+    {{/if}}
+    {{{body}}}
+</body>
+</html>

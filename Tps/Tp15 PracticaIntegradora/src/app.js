@@ -7,6 +7,9 @@ import mongoose from 'mongoose'
 import MongoStore from 'connect-mongo'
 import passport from 'passport'
 import flash from 'connect-flash'
+import swaggerJsdoc from 'swagger-jsdoc'
+import swaggerUiExpress from 'swagger-ui-express'
+
     //Herramientas
 import __dirname from './utils/dirname.js'
 import { logger, addLogger } from './utils/loggers.js'
@@ -18,6 +21,19 @@ import cartRoute from './routes/cartRouter.js'
 
 const app = express()
 
+const swaggerOptions = {
+    definition:{
+        openapi:'3.0.1',
+        info:{
+            title:'Documentacion de Tp16',
+            description: 'Uso de Swagger en la API'
+        }
+    },
+    apis:[`${__dirname}/./../docs/**/*.yaml`]
+}
+
+const specs = swaggerJsdoc(swaggerOptions)
+app.use('/apidocs', swaggerUiExpress.serve, swaggerUiExpress.setup(specs))
 //Configuraciones
 app.use(express.json())
 app.use(express.urlencoded({extended:true}))
