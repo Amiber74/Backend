@@ -1,0 +1,28 @@
+<h1 style="text-decoration:underline; text-align:center">Tu carrito</h1>
+
+<form action="http://localhost:8080/" method="get">
+    <input type="submit" value="Volver">
+</form>
+
+
+{{#if Carrito}}
+
+    <div class="container" style="display: grid; grid-template-columns:repeat(4,1fr); text-align:center; gap:5px">
+        {{#each Carrito}}
+            <div class="Card" style="border:1px solid black; padding:5px; border-radius: 15px;">
+                <h4> {{this.product.title}} &nbsp;</h4>
+                <div class="img" style="width: 150px; heigth: 150px; background-color:gray; color: gray">.</div>
+                <p>{{this.product.description}}</p>
+                <p> $ {{this.product.price}} x {{this.quantity}} &nbsp;</p>
+            </div>  
+        {{/each}}
+    </div>
+
+{{else}}
+    <h2>Sin productos en el carrito</h2>
+{{/if}}
+
+<form action="http://localhost:8080/api/ticket/{{CID}}/purchase" method="post">
+    <input type="hidden" name="Uid" value="{{user}}">
+    <input type="submit" value="Finalizar Compra">
+</form>

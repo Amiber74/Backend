@@ -4,6 +4,17 @@ paths:
       summary: Agregar producto al carrito del usuario
       tags: 
         - Cart
+      parameters:
+        - name: Cid
+          in: path
+          required: true
+          type: string
+          description: ID unico del carrito del usuario
+        - name: Pid
+          in: path
+          required: true
+          type: string
+          description: ID unico del producto a agregar
       responses:
         "200":
           description: Agrega el produto al carrito del usuario
