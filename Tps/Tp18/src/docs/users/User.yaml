@@ -1,0 +1,55 @@
+paths:
+  /api/user/login:
+    post:
+      summary: Loguea al usuario
+      tags: 
+        - Users
+      responses: 
+        "200":
+          description: El usuario se logueo satisfactoriamente
+        "500":
+          description: Error interno del servidor al loguear al usuario
+
+  /api/user/register:
+    post:
+      summary: Registra al usuario
+      tags:
+        - Users
+      responses:
+        "200":
+          description: El usuario se registro correctamente, se cargo al servidor y se lo redirige a /home
+        "500": 
+          description: Error interno del servidor al registrarse, puede ser por falta de informacion o por algun error en las funciones userServices/userRouter
+
+  /api/user/logout:
+    get:
+      summary: Borrar la cookie de usuario
+    tags:
+      - Users
+    responses: 
+      "200":
+        description: Borra la cookie 'user' donde se guardo el id del usuario
+      "500":
+        description: Error al borrar la cookie 'user' puede pasar por algun error de codigo o la cookie no existe
+
+  /api/user/updateRole:
+    post:
+      summary: Cambia el role de los usuarios con role 'user' o 'premium'
+      tags:
+        - Users
+    responses: 
+      "200":
+        description: Cambio de rol del usuario de premium a user y viceversa
+      "500":
+        dsecription: Error al cambiar el rol, esto se puede deber por rol equivocado o por funciones internas del servidor
+
+  /api/user/sendEmail:
+    post:
+      summary: Envia email de confirmacion de cambio de contgraseña al usuario
+    tags: 
+      - Users
+    responses: 
+      "200":
+        description: Envio exitoso de email para el cambio de contraseña
+      "500":
+        description: Error del servidor interno, esto puede pasar si no existe un email al que enviar la informacion

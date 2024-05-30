@@ -17,8 +17,12 @@ const roleMiddleware = (role) => {
 
 route.post('/register', async (req, res) => {
     const {firstName, lastName, email, password, phone} = req.body
-    await US.createUser(firstName, lastName, email, password, phone)
-    res.redirect('/home')
+    try {
+        await US.createUser(firstName, lastName, email, password, phone)
+        res.status(201).redirect('/home')
+    } catch(err) {
+        res.status(500).redirect('/home')
+    }
 })
 
 route.post('/login', async (req, res) => {

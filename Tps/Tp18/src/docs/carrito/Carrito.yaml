@@ -1,0 +1,11 @@
+paths:
+  /api/cart/addProduct/:Cid/:Pid:
+    post:
+      summary: Agregar producto al carrito del usuario
+      tags: 
+        - Cart
+      responses:
+        "200":
+          description: Agrega el produto al carrito del usuario
+        "500": 
+          description: Error del servidor al agregar el producto, puede ser porque falta de informacion (Id de carrito y Id de producto)
