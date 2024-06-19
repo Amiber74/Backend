@@ -1,0 +1,341 @@
+warn: Error inesperado en Cart: mongoose is not defined
+warn: Error inesperado en Cart: mongoose is not defined
+warn: Error inesperado en Cart: mongoose is not defined
+warn: Error inesperado en Cart: userModel.create(...).save is not a function
+error: Error en Cart: Email no encontrado
+error: Error en Cart: usuario no encontrado
+warn: Error inesperado en Cart: DuplicateEmailError is not defined
+warn: Error inesperado en Cart: mongoose is not defined
+warn: Error inesperado en Cart: userModel.create(...).save is not a function
+error: Error en Cart: Email no encontrado
+error: Error en Cart: usuario no encontrado
+warn: Error inesperado en Cart: DuplicateEmailError is not defined
+warn: Error inesperado en Cart: emai is not defined
+warn: Error inesperado en Cart: cartModel.create is not a constructor
+error: Error en Cart: Campos Incompletos
+error: Error en Cart: Email no encontrado
+error: Error en Cart: usuario no encontrado
+error: Error en Cart: Campos Incompletos
+error: Error en Cart: Email no encontrado
+error: Error en Cart: usuario no encontrado
+error: Error en Cart:  email: rojas.facundo2002@gmail.com ya existe
+error: Error en Cart:  email: rojas.facundo2002@gmail.com ya existe
+error: Error en Productos: Campos incompletos
+error: Error en Productos: Campos incompletos
+error: Error en Productos: Campos incompletos
+error: Error en Productos: titulo de producto ya existente
+error: Error en Productos: titulo de producto ya existente
+error: Error en Productos: titulo de producto ya existente
+error: Error en Productos: titulo de producto ya existente
+error: Error en Productos: titulo de producto ya existente
+error: Error en Productos: titulo de producto ya existente
+error: Error en Productos: Campos incompletos
+error: Error en Productos: Campos incompletos
+error: Error en Productos: Campos incompletos
+error: Error en Productos: Campos incompletos
+error: Error en Productos: Campos incompletos
+error: Error en Productos: Campos incompletos
+error: Error en Productos: Campos incompletos
+error: Error en Productos: Campos incompletos
+error: Error en Productos: titulo de producto ya existente
+error: Error en Productos: titulo de producto ya existente
+error: Error en Productos: titulo de producto ya existente
+error: Error en Cart:  email: rojas.facundo2002@gmail.com ya existe
+error: Error en Cart:  email: rojas.facundo2002@gmail.com ya existe
+error: Error en Cart:  email: rojas.facundo2002@gmail.com ya existe
+error: Error en Cart:  email: rojas.facundo2002@gmail.com ya existe
+error: Error en Cart:  email: rojas.facundo2002@gmail.com ya existe
+error: Error en Cart:  email: rojas.facundo2002@gmail.com ya existe
+error: Error en Cart:  email: rojas.facundo2002@gmail.com ya existe
+error: Error en Cart:  email: rojas.facundo2002@gmail.com ya existe
+error: Error en Cart:  email: rojas.facundo2002@gmail.com ya existe
+error: Error en Cart: Campo incompleto
+error: Error en Cart: Campo incompleto
+error: Error en Cart: Campo incompleto
+error: Error en Cart: Campo incompleto
+error: Error en Cart: Campo incompleto
+error: Error en Cart: Campo incompleto
+error: Error en Cart: Campo incompleto
+error: Error en Cart: Campo incompleto
+error: Error en Cart: Campo incompleto
+error: Error en Cart: Campo incompleto
+error: Error en Cart: Campo incompleto
+error: Error en Cart: Campo incompleto
+error: Error en Cart: Campo incompleto
+error: Error en Cart: Campo incompleto
+error: Error en Cart: Campo incompleto
+error: Error en Cart: Campo incompleto
+error: Error en Cart: Campo incompleto
+error: Error en Cart: Campo incompleto
+error: Error en Cart: Campo incompleto
+error: Error en Cart: Campo incompleto
+error: Error en Cart: Campo incompleto
+error: Error en Cart: Campo incompleto
+error: Error en Cart: Campo incompleto
+error: Error en Cart: Campo incompleto
+error: Error en Cart: Campo incompleto
+error: Error en Cart: Campo incompleto
+error: Error en Cart: Campo incompleto
+error: Error en Cart: Campo incompleto
+error: Error en Cart: Campo incompleto
+error: Error en Cart: Campo incompleto
+error: Error en Cart: Campo incompleto
+error: Error en Cart: Campo incompleto
+error: Error en Cart: Campo incompleto
+error: Error en Cart: Campo incompleto
+error: Error en Cart: Campo incompleto
+error: Error en Cart: Campo incompleto
+error: Error en Cart: Campo incompleto
+error: Error en Cart: Campo incompleto
+warn: Error inesperado en Cart: cart is not defined
+warn: Error inesperado en Cart: cart is not defined
+error: Error en Cart: Campo sin completar
+warn: Error inesperado en Cart: cart is not defined
+warn: Error inesperado en Cart: cart is not defined
+error: Error en Cart: Campo sin completar
+error: Error en Cart: Campo sin completar
+warn: Error inesperado en Cart: cart is not defined
+warn: Error inesperado en Cart: cart is not defined
+warn: Error inesperado en Cart: cart is not defined
+warn: Error inesperado en Cart: cart is not defined
+warn: Error inesperado en Cart: cart is not defined
+warn: Error inesperado en Cart: cart is not defined
+error: Error en Cart: Campo sin completar
+error: Error en Cart: Campo sin completar
+error: Error en Cart: Campo sin completar
+error: Error en Cart: Cart already exist
+error: Error en Cart: Cart already exist
+error: Error en Cart: Cart already exist
+error: Error en Cart: Cart already exist
+error: Error en Cart: Cart already exist
+error: Error en Cart: Campo sin completar
+error: Error en Cart: Campo incompleto
+error: Error en Cart: Campos Incompletos
+error: Error en Cart: Campos Incompletos
+error: Error en Cart: Campos Incompletos
+error: Error en Cart: Campo sin completar
+error: Error en Cart: Campo sin completar
+error: Error en Cart: Campo sin completar
+error: Error en Cart: Campos Incompletos
+error: Error en Cart: Campos Incompletos
+error: Error en Cart: Campo sin completar
+error: Error en Cart: Campos Incompletos
+warn: Error inesperado en Productos: cart.products.length is not a function
+warn: Error inesperado en Productos: email is not defined
+warn: Error inesperado en Productos: ticketModel.create is not a constructor
+warn: Error inesperado en Productos: tickets validation failed: purchaser: Path `purchaser` is required.
+warn: Error inesperado en Cart: Cannot read properties of undefined (reading 'toString')
+error: Error en Cart: Campos Incompletos
+warn: Error inesperado en Productos: ValidationError is not defined
+error: Error en Cart: Campo sin completar
+error: Error en Cart: Campo sin completar
+error: Error en Cart: Campo sin completar
+error: Error en Cart: Campo sin completar
+error: Error en Cart: Campo sin completar
+error: Error en Cart: Campo sin completar
+error: Error en Productos: Producto no Encontrado
+warn: Error inesperado en Productos: Cannot read properties of undefined (reading 'stock')
+error: Error en Productos: Producto no Encontrado
+warn: Error inesperado en Productos: Cannot read properties of undefined (reading 'stock')
+error: Error en Productos: Producto no Encontrado
+warn: Error inesperado en Productos: Cannot read properties of undefined (reading 'stock')
+error: Error en Productos: Producto no Encontrado
+error: Error en Productos: Producto no Encontrado
+warn: Error inesperado en Productos: Cannot read properties of undefined (reading 'stock')
+error: Error en Productos: Campo incompleto
+error: Error en Productos: Producto no Encontrado
+warn: Error inesperado en Productos: Cannot read properties of undefined (reading 'stock')
+error: Error en Productos: Producto no Encontrado
+warn: Error inesperado en Productos: Cannot read properties of undefined (reading 'stock')
+error: Error en Productos: Producto no Encontrado
+warn: Error inesperado en Productos: Cannot read properties of undefined (reading 'stock')
+error: Error en Productos: Campo incompleto
+error: Error en Productos: Campo incompleto
+error: Error en Productos: Campo incompleto
+error: Error en Productos: Campo incompleto
+error: Error en Productos: Campo incompleto
+error: Error en Cart: Campo sin completar
+error: Error en Cart: Campo sin completar
+error: Error en Cart: Campos Incompletos
+error: Error en Cart: Campos Incompletos
+error: Error en Cart: Campo sin completar
+error: Error en Cart: Campos Incompletos
+error: Error en Cart: Campo incompleto
+error: Error en Cart: Campo incompleto
+error: Error en Cart: Campo incompleto
+error: Error en Cart: Campo incompleto
+error: Error en Cart: Campo incompleto
+error: Error en Cart: Campo incompleto
+error: Error en Cart: Campo incompleto
+error: Error en Cart: Campo incompleto
+error: Error en Cart: Campo incompleto
+error: Error en Cart: Campo incompleto
+error: Error en Cart: Campo incompleto
+error: Error en Cart: Campo incompleto
+error: Error en Cart: Campo incompleto
+error: Error en Cart: Campo incompleto
+error: Error en Cart: Campo incompleto
+error: Error en Cart: Campos Incompletos
+error: Error en Cart: Campos Incompletos
+error: Error en Cart: Campos Incompletos
+error: Error en Cart: Campos Incompletos
+error: Error en Cart: Campo sin completar
+error: Error en Cart: Campo sin completar
+error: Error en Cart: Campo sin completar
+error: Error en Cart: Campo sin completar
+error: Error en Cart: Campos Incompletos
+error: Error en Cart: Campos Incompletos
+warn: Error inesperado en Cart: Error de permisos Premiums
+warn: Error inesperado en Productos: tickets validation failed: amount: Cast to Number failed for value "NaN" (type number) at path "amount"
+error: Error en Cart: Campo sin completar
+error: Error en Cart: Campo sin completar
+warn: Error inesperado en Productos: tickets validation failed: amount: Cast to Number failed for value "NaN" (type number) at path "amount"
+error: Error en Cart: Campo sin completar
+error: Error en Cart: Campo sin completar
+error: Error en Cart: Campo sin completar
+error: Error en Cart: Campo sin completar
+error: Error en Cart: Campo sin completar
+error: Error en Cart: Campo sin completar
+error: Error en Cart: Campo sin completar
+error: Error en Cart: Campos Incompletos
+warn: Error inesperado en Cart: lastConnection is not defined
+warn: Error inesperado en Cart: lastConnection is not defined
+error: Error en Cart: Campos Incompletos
+error: Error en Cart: Campos Incompletos
+error: Error en Cart: Campos Incompletos
+error: Error en Cart: Campos Incompletos
+error: Error en Cart: Campos Incompletos
+error: Error en Cart: Campos Incompletos
+error: Error en Cart: Campos Incompletos
+error: Error en Cart: Campos Incompletos
+error: Error en Cart: Campos Incompletos
+error: Error en Cart: Campos Incompletos
+error: Error en Cart: Campos Incompletos
+error: Error en Cart: Campos Incompletos
+error: Error en Cart: Campos Incompletos
+error: Error en Cart: Campos Incompletos
+error: Error en Cart: Campos Incompletos
+error: Error en Cart: Campos Incompletos
+error: Error en Cart: Campos Incompletos
+error: Error en Cart: Campos Incompletos
+error: Error en Cart: Campos Incompletos
+error: Error en Productos: Campos incompletos
+error: Error en Productos: Campos incompletos
+error: Error en Productos: Campos incompletos
+error: Error en Productos: Campos incompletos
+error: Error en Productos: Campos incompletos
+error: Error en Productos: Campos incompletos
+error: Error en Productos: Campos incompletos
+error: Error en Productos: Campos incompletos
+error: Error en Productos: Campos incompletos
+error: Error en Productos: Campos incompletos
+error: Error en Productos: Campos incompletos
+error: Error en Productos: Campos incompletos
+error: Error en Productos: Campos incompletos
+error: Error en Productos: Campos incompletos
+error: Error en Productos: Campos incompletos
+error: Error en Productos: Campos incompletos
+error: Error en Productos: Campos incompletos
+error: Error en Productos: Campos incompletos
+error: Error en Productos: Campos incompletos
+error: Error en Productos: Campos incompletos
+error: Error en Productos: Campos incompletos
+error: Error en Productos: Campos incompletos
+error: Error en Productos: Campos incompletos
+error: Error en Productos: titulo de producto ya existente
+error: Error en Productos: titulo de producto ya existente
+error: Error en Productos: titulo de producto ya existente
+warn: Error inesperado en Productos: products validation failed: thumbnail: Cast to string failed for value "{
+  fieldname: 'thumbnail',
+  originalname: 'img_26471-c1628b6d4bea4429e016867785257693-480-0.webp',
+  encoding: '7bit',
+  mimetype: 'image/webp',
+  destination: 'C:\\Users\\User\\Desktop\\Coder\\Backend v2\\Tps\\ProyectoFinal\\src\\utils./../public/img/products',
+  filename: 'img_26471-c1628b6d4bea4429e016867785257693-480-0.webp_17-06-2024',
+  path: 'C:\\Users\\User\\Desktop\\Coder\\Backend v2\\Tps\\ProyectoFinal\\src\\public\\img\\products\\img_26471-c1628b6d4bea4429e016867785257693-480-0.webp_17-06-2024',
+  size: 91630
+}" (type Object) at path "thumbnail"
+warn: Error inesperado en Productos: products validation failed: thumbnail: Cast to string failed for value "{
+  fieldname: 'thumbnail',
+  originalname: 'img_26471-c1628b6d4bea4429e016867785257693-480-0.webp',
+  encoding: '7bit',
+  mimetype: 'image/webp',
+  destination: 'C:\\Users\\User\\Desktop\\Coder\\Backend v2\\Tps\\ProyectoFinal\\src\\utils./../public/img/products',
+  filename: 'img_26471-c1628b6d4bea4429e016867785257693-480-0.webp_17-06-2024',
+  path: 'C:\\Users\\User\\Desktop\\Coder\\Backend v2\\Tps\\ProyectoFinal\\src\\public\\img\\products\\img_26471-c1628b6d4bea4429e016867785257693-480-0.webp_17-06-2024',
+  size: 91630
+}" (type Object) at path "thumbnail"
+warn: Error inesperado en Productos: No cuenta con los permisos adecuados
+error: Error en Cart: No cuenta con los permisos adecuados
+warn: Error inesperado en Cart: name is not defined
+warn: Error inesperado en Productos: Pid is not defined
+error: Error en Productos: Campo/s incompleto
+warn: Error inesperado en Productos: newProd is not defined
+error: Error en Productos: Campo/s incompleto
+error: Error en Productos: Campo/s incompleto
+error: Error en Productos: Campos Incompletos | tipo ValidationError
+error: Error en Productos: Campos Incompletos | tipo ValidationError
+error: Error en Productos: Campos Incompletos | tipo ValidationError
+error: Error en Productos: Campos Incompletos | tipo ValidationError
+error: Error en Productos: Campos Incompletos | tipo ValidationError
+error: Error en Productos: Campos Incompletos | tipo ValidationError
+error: Error en Productos: Campos Incompletos | tipo ValidationError
+error: Error en Productos: Campos Incompletos | tipo ValidationError
+error: Error en Productos: Campos Incompletos | tipo ValidationError
+error: Error en Users: Campos Incompletos | tipo ValidationError
+error: Error en Users: Campos Incompletos | tipo ValidationError
+error: Error en Users: Campos Incompletos | tipo ValidationError
+error: Error en Users: Campos Incompletos | tipo ValidationError
+error: Error en Users: Campos Incompletos | tipo ValidationError
+error: Error en Users: Campos Incompletos | tipo ValidationError
+warn: Error inesperado en Users: Cannot read properties of null (reading 'avatar')
+warn: Error inesperado en Users: Cannot read properties of null (reading 'avatar')
+warn: Error inesperado en Users: userDto is not defined
+error: Error en Cart: Error al encontrar el carrito | tipo CartNotFoundError
+warn: Error inesperado en Users: Cannot read properties of null (reading 'avatar')
+warn: Error inesperado en Users: Cannot read properties of null (reading 'avatar')
+warn: Error inesperado en Users: Cannot read properties of null (reading 'avatar')
+warn: Error inesperado en Users: Cannot read properties of null (reading 'avatar')
+warn: Error inesperado en Users: Cannot read properties of null (reading 'avatar')
+warn: Error inesperado en Users: Cannot read properties of null (reading 'avatar')
+warn: Error inesperado en Users: Cannot read properties of null (reading 'avatar')
+warn: Error inesperado en Users: Cannot read properties of null (reading 'avatar')
+warn: Error inesperado en Users: Cannot read properties of null (reading 'avatar')
+warn: Error inesperado en Users: Cannot read properties of null (reading 'avatar')
+warn: Error inesperado en Users: Cannot read properties of null (reading 'avatar')
+warn: Error inesperado en Users: Cannot read properties of null (reading 'avatar')
+warn: Error inesperado en Users: Cannot read properties of null (reading 'avatar')
+warn: Error inesperado en Users: Cannot read properties of null (reading 'avatar')
+warn: Error inesperado en Users: Cannot read properties of null (reading 'avatar')
+warn: Error inesperado en Users: Cannot read properties of null (reading 'avatar')
+warn: Error inesperado en Users: Cannot read properties of null (reading 'avatar')
+warn: Error inesperado en Users: Cannot read properties of null (reading 'avatar')
+warn: Error inesperado en Users: Cannot read properties of null (reading '_id')
+warn: Error inesperado en Users: Cannot read properties of null (reading 'avatar')
+warn: Error inesperado en Users: Cannot read properties of null (reading 'avatar')
+warn: Error inesperado en Users: Cannot read properties of null (reading 'avatar')
+warn: Error inesperado en Users: Cannot read properties of null (reading 'avatar')
+warn: Error inesperado en Users: Cannot read properties of null (reading 'avatar')
+warn: Error inesperado en Users: Cannot read properties of null (reading 'avatar')
+warn: Error inesperado en Users: Cannot read properties of null (reading 'avatar')
+error: Error en Users: Error al obtener el usuario | tipo UserNotFoundError
+error: Error en Cart: Error al encontrar el carrito | tipo CartNotFoundError
+error: Error en Cart: Error al encontrar el carrito | tipo CartNotFoundError
+error: Error en Cart: Error al encontrar el carrito | tipo CartNotFoundError
+error: Error en Users: Error al obtener el usuario | tipo UserNotFoundError
+error: Error en Cart: Error al encontrar el carrito | tipo CartNotFoundError
+error: Error en Users: Error al obtener dto del usuario | tipo userDtoNotFoundError
+error: Error en Users: Error al obtener dto del usuario | tipo userDtoNotFoundError
+error: Error en Users: Error al obtener dto del usuario | tipo userDtoNotFoundError
+error: Error en Users: Error al obtener dto del usuario | tipo userDtoNotFoundError
+error: Error en Cart: Error al encontrar el carrito | tipo CartNotFoundError
+error: Error en Users: Error al obtener dto del usuario | tipo userDtoNotFoundError
+error: Error en Users: Error al obtener el usuario | tipo UserNotFoundError
+error: Error en Users: Error al obtener el usuario | tipo UserNotFoundError
+error: Error en Users: Campo incompleto | tipo ValidationError
+error: Error en Users: Campo incompleto | tipo ValidationError
+error: Error en Users: Campo incompleto | tipo ValidationError
+error: Error en Users: Campo incompleto | tipo ValidationError
+error: Error en Users: Contraseña igual a la anterior | tipo SamePasswordError
+warn: Error inesperado en Users: undefined
+warn: Error inesperado en Users: undefined

@@ -1,0 +1,63 @@
+paths: 
+  /api/user/login:
+    post:
+      summary: Inicio de sesion del usuario
+      tags: 
+        - Users
+      parameters:
+        - name: email
+          in: body
+          required: true
+          type: string
+          description: Email del usuario
+        - name: password
+          in: body
+          required: true
+          type: string
+          description: contraseña del usuario
+      responses: 
+        "200": 
+          description: Correcto inicio de sesion y redireccion a '/home'
+        "401":
+          description: Error al iniciar sesion, posibles causas son Contraseña o email incorrectos, no esta registrado el usuario y luego redirige a la ruta '/session'
+
+  /api/user/register:
+    post:
+      summary: Registro de usuario
+      tags:
+        - Users
+      parameters:
+        - name: firstName
+        in: body
+        required: true
+        type: string
+        description: Nombre del usuario
+        - name: lastName
+        in: body
+        required: true
+        type: string
+        description: Apellido del usuario
+        - name: email
+        in: body
+        required: true
+        type: string
+        description: email del usuario
+        - name: password
+        in: body
+        required: true
+        type: string
+        description: contraseña del usuario
+        - name: phone
+        in: body
+        required: false
+        type: string
+        description: telefono del usuario
+      responses:
+        "200":
+          description: Registro de usuario exitoso, se lo redirige a la ruta '/session' para que inicie sesion para validar la correcta carga de datos
+        "401":
+          description: Error en el registro, las posibles causas pueden ser email ya existente, falta de informacion (telefono opcional) y luego se le redirige a la ruta '/session'
+        
+  # /api/user/logout: 
+  #   get:
+  #     summary: dar de baja 
